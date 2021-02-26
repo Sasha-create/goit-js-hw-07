@@ -1,0 +1,47 @@
+html {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0px;
+}
+
+p {
+  margin: 0px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.list {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+}
+.image-item {
+  width: 100px;
+  margin-left: 15px;
+  margin-top: 0px;
+}
+
+#validation-input {
+  border: 3px solid #bdbdbd;
+}
+
+#validation-input.valid {
+  border-color: #4caf50;
+}
+
+#validation-input.invalid {
+  border-color: #f44336;
+}

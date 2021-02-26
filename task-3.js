@@ -19,19 +19,27 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
-const imagesList = document.getElementById('images');
-//console.log(imagesList);
 
-// const galleryItems = images.map(el => {
-//   const item = document.createElement('li');
-//   item.textContent = el;
-//   return item;
-// });
+const galleryList = document.querySelector('ul#gallery');
 
-// imagesList.append(...galleryItems);
+const imgList = images.map(el => {
+  const newLiElement = document.createElement('li');
+  newLiElement.insertAdjacentHTML(
+    'beforeend',
+    `<img src="${el.url}" alt="${el.alt}">`,
+  );
+  return newLiElement;
+});
+galleryList.append(...imgList);
 
-// const imageEl = document.querySelector('.hero__image');
-// console.log('imageEl', imageEl);
-// (imageEl.src =
-//   'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'),
-//   (imageEl.alt = 'Это новый котик');
+galleryList.style.display = 'flex';
+galleryList.style.justifyContent = 'space-around';
+
+const actions = document.querySelectorAll('#gallery li');
+actions.forEach(el => {
+  el.style.border = '2px solid black';
+  el.style.borderRadius = '2px';
+  el.style.width = '400px';
+  el.style.height = '200px';
+  el.style.overflow = 'hidden';
+});

@@ -21,3 +21,23 @@
 // #validation-input.invalid {
 //   border-color: #f44336;
 // }
+const textField = document.querySelector('#validation-input');
+
+textField.addEventListener('blur', testCorrectInput);
+
+function testCorrectInput(e) {
+  if (
+    textField.classList.contains('valid') ||
+    textField.value.length != textField.dataset.length
+  ) {
+    textField.classList.remove('valid');
+    textField.classList.add('invalid');
+  }
+  if (
+    textField.classList.contains('invalid') ||
+    textField.value.length == textField.dataset.length
+  ) {
+    textField.classList.remove('invalid');
+    textField.classList.add('valid');
+  }
+}

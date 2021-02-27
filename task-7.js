@@ -3,3 +3,18 @@
 // <input id="font-size-control" type="range" />
 // <br />
 // <span id="text">Абракадабра!</span>
+const textSizeGlass = document.querySelector('#font-size-control');
+textSizeGlass.addEventListener(
+  'input',
+  el =>
+    (document.querySelector(
+      'span#text',
+    ).style.fontSize = `${el.target.value}px`),
+);
+
+textSizeGlass.setAttribute('min', '0');
+textSizeGlass.setAttribute('max', '100');
+textSizeGlass.setAttribute('step', '1');
+textSizeGlass.value = parseInt(
+  window.getComputedStyle(document.getElementById('text')).fontSize,
+);

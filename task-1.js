@@ -13,6 +13,7 @@ const ulCategories = document.querySelector('ul#categories');
 const ulCategoriesElemCount = ulCategories.children.length;
 
 console.log(`In list ${ulCategoriesElemCount} categories`);
+
 const liElemenst = ulCategories.querySelectorAll('li.item');
 [].forEach.call(liElemenst, liNodeElement => {
   console.log(`Категория: ${liNodeElement.querySelector('h2').textContent}`);

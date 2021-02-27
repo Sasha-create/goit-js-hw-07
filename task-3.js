@@ -36,10 +36,11 @@ galleryList.style.display = 'flex';
 galleryList.style.justifyContent = 'space-around';
 
 const actions = document.querySelectorAll('#gallery li');
+//actions.setAttribute('width', 370);
 actions.forEach(el => {
   el.style.border = '2px solid black';
   el.style.borderRadius = '2px';
-  el.style.width = '400px';
+  el.style.width = '370px';
   el.style.height = '200px';
   el.style.overflow = 'hidden';
 });

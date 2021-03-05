@@ -21,23 +21,21 @@
 // #validation-input.invalid {
 //   border-color: #f44336;
 // }
-const textField = document.querySelector('#validation-input');
+const inputRef = document.querySelector('#validation-input');
 
-textField.addEventListener('blur', testCorrectInput);
+inputRef.addEventListener('blur', inputHandler);
 
-function testCorrectInput(e) {
-  if (
-    textField.classList.contains('valid') ||
-    textField.value.length != textField.dataset.length
-  ) {
-    textField.classList.remove('valid');
-    textField.classList.add('invalid');
+function inputHandler(event) {
+  const valueLength = Number(event.target.value.length);
+  const dataSetLength = Number(event.target.dataset.length);
+
+  if (valueLength === dataSetLength) {
+    inputRef.classList.add('valid');
+    inputRef.classList.remove('invalid');
   }
-  if (
-    textField.classList.contains('invalid') ||
-    textField.value.length == textField.dataset.length
-  ) {
-    textField.classList.remove('invalid');
-    textField.classList.add('valid');
+
+  if (valueLength !== dataSetLength) {
+    inputRef.classList.add('invalid');
+    inputRef.classList.remove('valid');
   }
 }

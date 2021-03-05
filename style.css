@@ -2,10 +2,15 @@ html {
   box-sizing: border-box;
 }
 
+body {
+  font-size: 14px;
+  font-family: sans-serif;
+  margin-left: 15px;
+}
 h1,
 h2,
 h3 {
-  margin-top: 0px;
+  margin: 0px;
 }
 
 p {
@@ -20,7 +25,8 @@ img {
 
 ul {
   margin: 0;
-  padding: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
   list-style: none;
 }
 .list {
